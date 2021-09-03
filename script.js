@@ -42,10 +42,15 @@ async function getUser() {
 }
 
 async function getInfo() {
-    let user = await getUser();
-    throw new Error('error');
+    try {
+        let user = await getUser();
+        throw new Error('error');
+    }
+    catch (err){
+        console.log(err)
+    }
 }
 
-getInfo().catch(console.log);
+getInfo()
 
 
